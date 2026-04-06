@@ -43,3 +43,17 @@ python eval_countdown.py \
   --output_suffix fullckpt_eval \
   --shot_mode zero_shot \
   --tensor_parallel_size 1
+
+## Run evals on code generation MBPP
+
+python gen_plus_eval_codegen_mbpp.py \
+--model google/gemma-2-2b  
+--base_model google/gemma-2-2b  
+--eval_mode checkpoints \
+--checkpoint_dir ckpts/full_checkpoints \
+--checkpoints checkpoint-100 checkpoint-200 \
+--dataset data/test.jsonl \  
+--output_dir outputs/eval_run \
+--output_suffix fullckpt_eval \
+--shot_mode zero_shot \
+--tensor_parallel_size 1
